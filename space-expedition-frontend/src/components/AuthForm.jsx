@@ -12,7 +12,7 @@ const AuthForm = ({ isLogin, setToken }) => {
     e.preventDefault();
     const url = isLogin ? '/api/auth/login' : '/api/auth/register';
     try {
-      const response = await axios.post(`https://your-backend-host${url}`, { username, password });
+      const response = await axios.post(`https://study-project-back.vercel.app/api/${url}`, { username, password });
       if (isLogin) {
         setToken(response.data.token);
       } else {

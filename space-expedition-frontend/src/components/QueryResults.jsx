@@ -13,9 +13,9 @@ const QueryResults = ({ token }) => {
     const fetchQueries = async () => {
       try {
         const [oxygen, repairs, systems] = await Promise.all([
-          axios.get('https://your-backend-host/api/queries/oxygen', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('https://your-backend-host/api/queries/repairs', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('https://your-backend-host/api/queries/systems', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://study-project-back.vercel.app/api/queries/oxygen', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://study-project-back.vercel.app/api/queries/repairs', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://study-project-back.vercel.app/api/queries/systems', { headers: { Authorization: `Bearer ${token}` } }),
         ]);
         setQueries({ oxygen, repairs, systems });
         setError('');

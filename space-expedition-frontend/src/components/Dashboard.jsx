@@ -27,7 +27,7 @@ const Dashboard = ({ token, setToken }) => {
   const fetchData = async () => {
     try {
       const params = { sortBy, order, ...(filter && { filterRole: filter }), ...(search && { search }) };
-      const response = await axios.get(`https://your-backend-host/api/${table}`, {
+      const response = await axios.get(`https://study-project-back.vercel.app/api/${table}`, {
         params,
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -45,7 +45,7 @@ const Dashboard = ({ token, setToken }) => {
   const handleInsert = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://your-backend-host/api/${table}`, formData, {
+      await axios.post(`https://study-project-back.vercel.app/api/${table}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchData();
